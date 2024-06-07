@@ -103,7 +103,6 @@
 </header>
 
 <section>
-    <h2>Descripción</h2>
     <p>Welcome to AlphaBII Portfolio, here you will find a few examples of our daily work with BI Tools such as Tableau and Google Looker.</p>
 </section>
 
@@ -143,29 +142,29 @@
 </section>
 
 <script>
-    let currentIndex = 0;
-    const dashboards = document.querySelectorAll('section:nth-of-type(3) .dashboard-container iframe');
+    let currentIndexLooker = 0;
+    const dashboardsLooker = document.querySelectorAll('section#looker iframe');
 
-    function showDashboard(index) {
-        dashboards.forEach((dashboard, i) => {
+    function showDashboardLooker(index) {
+        dashboardsLooker.forEach((dashboard, i) => {
             dashboard.classList.toggle('active', i === index);
         });
     }
 
-    function nextDashboard() {
-        currentIndex = (currentIndex + 1) % dashboards.length;
-        showDashboard(currentIndex);
+    function nextDashboardLooker() {
+        currentIndexLooker = (currentIndexLooker + 1) % dashboardsLooker.length;
+        showDashboardLooker(currentIndexLooker);
     }
 
-    function prevDashboard() {
-        currentIndex = (currentIndex - 1 + dashboards.length) % dashboards.length;
-        showDashboard(currentIndex);
+    function prevDashboardLooker() {
+        currentIndexLooker = (currentIndexLooker - 1 + dashboardsLooker.length) % dashboardsLooker.length;
+        showDashboardLooker(currentIndexLooker);
     }
 
-    setInterval(nextDashboard, 20000); // Change every 20 seconds
+    setInterval(nextDashboardLooker, 20000); // Cambia cada 20 segundos
 
     let currentIndexTableau = 0;
-    const dashboardsTableau = document.querySelectorAll('section:nth-of-type(4) .dashboard-container iframe');
+    const dashboardsTableau = document.querySelectorAll('section#tableau iframe');
 
     function showDashboardTableau(index) {
         dashboardsTableau.forEach((dashboard, i) => {
@@ -183,7 +182,7 @@
         showDashboardTableau(currentIndexTableau);
     }
 
-    setInterval(nextDashboardTableau, 20000); // Change every 20 seconds
+    setInterval(nextDashboardTableau, 20000); // Cambia cada 20 segundos
 </script>
 
 </body>
