@@ -24,16 +24,37 @@
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
-        .dashboards {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            justify-items: center;
-        }
-        .dashboards iframe {
+       .dashboard-container {
+            position: relative;
             width: 100%;
             height: 400px;
+            overflow: hidden;
+        }
+        .dashboard-container iframe {
+            width: 100%;
+            height: 100%;
             border: none;
+            display: none;
+        }
+        .dashboard-container iframe.active {
+            display: block;
+        }
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            color: #333;
+            background-color: rgba(255, 255, 255, 0.7);
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+        }
+        .arrow.left {
+            left: 10px;
+        }
+        .arrow.right {
+            right: 10px;
         }
         .social-media a {
             margin: 0 10px;
@@ -59,24 +80,28 @@
 <section>
     <h2>Looker Studio by Google</h2>
     <div class="dashboards">
-        <iframe <iframe width="600" height="338" src="https://lookerstudio.google.com/embed/reporting/079981bb-9b41-4a50-95bb-d73be7fa7275/page/U8K2D" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe></iframe>
+        <iframe <iframe width="600" height="338" src="https://lookerstudio.google.com/embed/reporting/079981bb-9b41-4a50-95bb-d73be7fa7275/page/U8K2D" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>class="active"></iframe>
         <iframe src="URL_DEL_DASHBOARD_2"></iframe>
         <iframe src="URL_DEL_DASHBOARD_3"></iframe>
         <iframe src="URL_DEL_DASHBOARD_4"></iframe>
         <iframe src="URL_DEL_DASHBOARD_5"></iframe>
         <iframe src="URL_DEL_DASHBOARD_6"></iframe>
+        <button class="arrow left" onclick="prevDashboard()">&#9664;</button>
+        <button class="arrow right" onclick="nextDashboard()">&#9654;</button>
     </div>
 </section>
 
 <section>
     <h2>Tableau by Salesforce</h2>
     <div class="dashboards">
-        <iframe <div class='tableauPlaceholder' id='viz1717761637090' style='position: relative'><noscript><a href='#'><img alt='Tickets ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Al&#47;AlphaBII-Tickets&#47;Tickets&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='AlphaBII-Tickets&#47;Tickets' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Al&#47;AlphaBII-Tickets&#47;Tickets&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-GB' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1717761637090');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='1400px';vizElement.style.height='827px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script></iframe>
+        <iframe <div class='tableauPlaceholder' id='viz1717761637090' style='position: relative'><noscript><a href='#'><img alt='Tickets ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Al&#47;AlphaBII-Tickets&#47;Tickets&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='AlphaBII-Tickets&#47;Tickets' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Al&#47;AlphaBII-Tickets&#47;Tickets&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-GB' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1717761637090');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='1400px';vizElement.style.height='827px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>class="active"></iframe>
         <iframe src="URL_DEL_DASHBOARD_TABLEAU_2"></iframe>
         <iframe src="URL_DEL_DASHBOARD_TABLEAU_3"></iframe>
         <iframe src="URL_DEL_DASHBOARD_TABLEAU_4"></iframe>
         <iframe src="URL_DEL_DASHBOARD_TABLEAU_5"></iframe>
         <iframe src="URL_DEL_DASHBOARD_TABLEAU_6"></iframe>
+        <button class="arrow left" onclick="prevDashboardTableau()">&#9664;</button>
+        <button class="arrow right" onclick="nextDashboardTableau()">&#9654;</button>
     </div>
 </section>
 
@@ -90,6 +115,51 @@
         <a href=https://public.tableau.com/app/profile/alphabi.group/vizzes target="_blank">Tableau Public</a>
     </div>
 </section>
+
+<script>
+    let currentIndex = 0;
+    const dashboards = document.querySelectorAll('.dashboard-container iframe');
+
+    function showDashboard(index) {
+        dashboards.forEach((dashboard, i) => {
+            dashboard.classList.toggle('active', i === index);
+        });
+    }
+
+    function nextDashboard() {
+        currentIndex = (currentIndex + 1) % dashboards.length;
+        showDashboard(currentIndex);
+    }
+
+    function prevDashboard() {
+        currentIndex = (currentIndex - 1 + dashboards.length) % dashboards.length;
+        showDashboard(currentIndex);
+    }
+
+    setInterval(nextDashboard, 20000); // Cambia cada 20 segundos
+
+    // Código similar para los dashboards de Tableau
+    let currentIndexTableau = 0;
+    const dashboardsTableau = document.querySelectorAll('.dashboard-container iframe');
+
+    function showDashboardTableau(index) {
+        dashboardsTableau.forEach((dashboard, i) => {
+            dashboard.classList.toggle('active', i === index);
+        });
+    }
+
+    function nextDashboardTableau() {
+        currentIndexTableau = (currentIndexTableau + 1) % dashboardsTableau.length;
+        showDashboardTableau(currentIndexTableau);
+    }
+
+    function prevDashboardTableau() {
+        currentIndexTableau = (currentIndexTableau - 1 + dashboardsTableau.length) % dashboardsTableau.length;
+        showDashboardTableau(currentIndexTableau);
+    }
+
+    setInterval(nextDashboardTableau, 20000); // Cambia cada 20 segundos
+</script>
 
 </body>
 </html>
