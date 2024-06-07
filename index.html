@@ -140,7 +140,7 @@
 
 <script>
     let currentIndexLooker = 0;
-    const dashboardsLooker = document.querySelectorAll('section#looker iframe');
+    const dashboardsLooker = document.querySelectorAll('section#looker .dashboard-container iframe');
 
     function showDashboardLooker(index) {
         dashboardsLooker.forEach((dashboard, i) => {
@@ -161,7 +161,7 @@
     setInterval(nextDashboardLooker, 20000); // Cambia cada 20 segundos
 
     let currentIndexTableau = 0;
-    const dashboardsTableau = document.querySelectorAll('section#tableau iframe');
+    const dashboardsTableau = document.querySelectorAll('section#tableau .dashboard-container iframe');
 
     function showDashboardTableau(index) {
         dashboardsTableau.forEach((dashboard, i) => {
