@@ -118,8 +118,10 @@
     <div class="dashboard-container">
         <!-- Código integrado para Tableau -->
         <iframe src="https://public.tableau.com/javascripts/api/tableau-2.min.js" width="100%" height="600px"></iframe>
-        <script type="text/javascript" src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
-        <script type="text/javascript" src="./app.js"></script>
+<!-- Script de la API de Tableau -->
+        <script id="tableau-api-script" type="text/javascript" src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
+<!-- Script de tu archivo app.js con la lógica de navegación -->
+        <script id="app-js-script" type="text/javascript" src="./app.js"></script>
         <button class="arrow left" onclick="prevDashboardTableau()">&#9664;</button>
         <button class="arrow right" onclick="nextDashboardTableau()">&#9654;</button>
         </div>
